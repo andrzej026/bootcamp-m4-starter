@@ -15,7 +15,7 @@
     width: 300px;
     font-size: 14px;
     padding: 5px 10px;
-    border: 1px solid rgba(0, 8, 7, .5);
+    border: 1px solid rgba(0, 8, 7, 0.5);
 }
 
 .search-box__form-submit {
@@ -23,7 +23,7 @@
     padding: 5px 10px;
     border: none;
     transition: all 0.2s linear;
-    color: #FFEEDB;
+    color: #ffffff;
     background-color: rgba(0, 8, 7);
 }
 
@@ -31,7 +31,7 @@
     opacity: 0.8;
     cursor: pointer;
     transition: all 0.2s linear;
-    background-color: #FFEEDB;
+    background-color: #ffffff;
     color: rgba(0, 8, 7);
 }
 

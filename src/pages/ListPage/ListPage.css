@@ -1,12 +1,45 @@
 .list-page {
-    padding: 42px calc(50% - 300px);
+    /* padding: 42px calc(50% - 300px); */
+
+    padding: 20px calc(50% - 500px) 10px;
+}
+
+.header_listpage {
+    background: rgb(224, 19, 19);
+    padding: 20px calc(50% - 500px) 10px;
 }
 
 .list-page__title {
     font-size: 34px;
-    margin-bottom: 26px;
+    font-family: 'Luckiest Guy', cursive;
+    color: #ffffff;
+    font-size: 45px;
+    background: rgb(224, 19, 19);
 }
 
 .list-page ul li {
     font-size: 18px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid rgb(226, 226, 226);
+    display: flex;
+}
+
+.IMBD_info {
+    border: none;
+    background-color: rgb(224, 19, 19);
+    padding: 10px 15px;
+    color: #ffffff;
+    font-size: 14px;
+    transition: all 0.2s linear;
+}
+.movie-item__info {
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom: 14px;
+}
+
+.IMBD_info a {
+    text-decoration: none;
+    color: #ffffff;
 }

@@ -1,37 +1,46 @@
 import React, { Component } from 'react';
+import store from '../../redux/store';
 import MovieItem from '../MovieItem/MovieItem';
 import './Movies.css';
 
 class Movies extends Component {
-    state = { 
-        movies: [
-            {
-                imdbID: 'tt3896198',
-                title: "Guardians of the Galaxy Vol. 2",
-                year: 2017,
-                poster: "https://m.media-amazon.com/images/M/MV5BNjM0NTc0NzItM2FlYS00YzEwLWE0YmUtNTA2ZWIzODc2OTgxXkEyXkFqcGdeQXVyNTgwNzIyNzg@._V1_SX300.jpg"
+    state = {
+        movies: [],
+        searchLine: '',
+    };
 
-            },
-            {
-                imdbID: 'tt0068646',
-                title: "The Godfather",
-                year: 1972,
-                poster: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
-
-            }
-        ]
+    componentDidMount() {
+        store.subscribe(() => {
+            const state = store.getState();
+            // console.log(state);
+            this.setState({
+                movies: state.movies,
+                searchLine: state.searchLine,
+            });
+        });
     }
-    render() { 
-        return ( 
-            <ul className="movies">
-                {this.state.movies.map((movie) => (
-                    <li className="movies__item" key={movie.imdbID}>
-                        <MovieItem {...movie} />
-                    </li>
-                ))}
-            </ul>
+
+    render() {
+        // console.log(this.state.movies);
+        return (
+            <>
+                {this.state.movies ? (
+                    <ul className="movies">
+                        {this.state.movies.map((movie) => (
+                            <li className="movies__item" key={movie.imdbID}>
+                                <MovieItem {...movie} />
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p className="movies__error">
+                        Your search "{this.state.searchLine}" did not match any
+                        movies. Try different keywords.
+                    </p>
+                )}
+            </>
         );
     }
 }
- 
+
 export default Movies;

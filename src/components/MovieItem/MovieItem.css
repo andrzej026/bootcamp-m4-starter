@@ -1,6 +1,7 @@
 .movie-item {
     padding: 20px;
-    background-color: #FFEEDB;
+    background-color: #ffffff;
+    border: 1px solid rgb(226, 226, 226);
     display: flex;
 }
 
@@ -17,9 +18,9 @@
 
 .movie-item__add-button {
     border: none;
-    background-color: #496DDB;
+    background-color: #496ddb;
     padding: 10px 15px;
-    color: #FFEEDB;
+    color: #ffffff;
     font-size: 14px;
     transition: all 0.2s linear;
 }
@@ -28,4 +29,13 @@
     cursor: pointer;
     opacity: 0.9;
     transition: all 0.2s linear;
+}
+
+.movie-item__add-button:disabled {
+    border: none;
+    transition: all 0.2s linear;
+    color: #ffffff;
+    background-color: rgba(0, 8, 7);
+    opacity: 0.5;
+    cursor: not-allowed;
 }
