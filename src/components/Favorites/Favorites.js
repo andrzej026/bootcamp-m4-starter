@@ -102,11 +102,22 @@ class Favorites extends Component {
                         type="button"
                         className="favorites__save"
                         onClick={this.saveFavorites}
-                        disabled={!this.state.movies.length}
+                        disabled={
+                            !this.state.movies.length || !this.state.title
+                        }
                     >
-                        {this.state.movies.length
+                        {this.state.movies.length && this.state.title
                             ? 'Save Favorites!'
-                            : 'Nothing to Save :('}
+                            : null}
+                        {!this.state.movies.length && this.state.title
+                            ? 'Nothing to Save :('
+                            : null}
+                        {!this.state.title && this.state.movies.length
+                            ? 'Enter the name of your Favorites List'
+                            : null}
+                        {!this.state.title && !this.state.movies.length
+                            ? 'Save Favorites!'
+                            : null}
                     </button>
                 )}
             </div>

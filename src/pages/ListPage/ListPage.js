@@ -21,7 +21,7 @@ class ListPage extends Component {
             <>
                 <header className="header_listpage">
                     <h1 className="list-page__title">
-                        Your Favorite list: {this.state.title}!
+                        Your Favorites list: {this.state.title}!
                     </h1>
                 </header>
                 <div className="list-page">

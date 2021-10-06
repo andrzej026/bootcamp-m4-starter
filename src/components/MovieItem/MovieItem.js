@@ -18,10 +18,10 @@ class MovieItem extends Component {
     }
 
     checkMovieInFavorites = (imdbID) => {
-        const selected = this.state.favorites.find((item) => {
-            return item.imdbID === imdbID;
-        });
-        if (selected) {
+        const justadded = this.state.favorites.find(
+            (item) => item.imdbID === imdbID
+        );
+        if (justadded) {
             return true;
         }
     };

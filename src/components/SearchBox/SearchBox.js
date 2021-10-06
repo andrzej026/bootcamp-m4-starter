@@ -53,7 +53,7 @@ class SearchBox extends Component {
                             type="text"
                             className="search-box__form-input"
                             placeholder="Maybe, Shawshank Redemption?"
-                            onChange={this.searchLineChangeHandler} //onInput??
+                            onInput={this.searchLineChangeHandler} //onInput??
                         />
                     </label>
                     <button
