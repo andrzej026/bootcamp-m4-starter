@@ -36,8 +36,6 @@ class Favorites extends Component {
     saveFavorites = (e) => {
         e.preventDefault();
         this.setState({ isClicked: true });
-        // console.log(this.state.movies.map((item) => item.imdbID));
-        // console.log(this.state.title);
         const info = { title: this.state.title, movies: this.state.movies };
         fetch('https://acb-api.algoritmika.org/api/movies/list', {
             method: 'POST',
@@ -47,15 +45,12 @@ class Favorites extends Component {
             .then((response) =>
                 response.json().then((result) => {
                     this.setState({ favoritesID: result.id });
-                    // console.log(result);
                 })
             )
             .catch((error) => console.log(error));
     };
 
     render() {
-        // console.log(this.state.title);
-        // console.log(this.state.movies);
         return (
             <div className="favorites">
                 <input
@@ -67,7 +62,6 @@ class Favorites extends Component {
                 />
                 <ul className="favorites__list">
                     {this.state.movies.map((item) => {
-                        // console.log(item);
                         return (
                             <li key={item.imdbID}>
                                 {item.Title} ({item.Year})

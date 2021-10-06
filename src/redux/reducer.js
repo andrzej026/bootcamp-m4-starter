@@ -7,7 +7,6 @@ const initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'SEARCHING_MOVIES':
-            // console.log(action)
             return {
                 ...state,
                 movies: action.payload.searchingMovies,
@@ -21,8 +20,6 @@ function reducer(state = initialState, action) {
             );
             if (!addedMovie) {
                 const favorites = [...state.favorites, movie];
-                // console.log(movie)
-                // console.log(favorites)
                 return {
                     ...state,
                     favorites,
@@ -39,7 +36,6 @@ function reducer(state = initialState, action) {
             return { ...state, favorites: removable };
 
         case 'CHANGE_SEACHLINE':
-            // console.log(action);
             return {
                 ...state,
                 searchLine: action.payload.searchValue,

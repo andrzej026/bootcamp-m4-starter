@@ -12,7 +12,6 @@ class ListPage extends Component {
             .then((response) => response.json())
             .then((result) => {
                 this.setState({ title: result.title, movies: result.movies });
-                // console.log(result.movies);
             })
             .catch((error) => console.log(error));
     }

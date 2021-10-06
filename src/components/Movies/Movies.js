@@ -12,7 +12,6 @@ class Movies extends Component {
     componentDidMount() {
         store.subscribe(() => {
             const state = store.getState();
-            // console.log(state);
             this.setState({
                 movies: state.movies,
                 searchLine: state.searchLine,
@@ -21,7 +20,6 @@ class Movies extends Component {
     }
 
     render() {
-        // console.log(this.state.movies);
         return (
             <>
                 {this.state.movies ? (

@@ -10,7 +10,6 @@ class MovieItem extends Component {
     componentDidMount() {
         store.subscribe(() => {
             const state = store.getState();
-            // console.log(state);
             this.setState({
                 favorites: state.favorites,
             });
@@ -36,7 +35,6 @@ class MovieItem extends Component {
     };
     render() {
         const { Title, Year, Poster, imdbID } = this.props;
-        // console.log(this.props)
         return (
             <article className="movie-item" key={imdbID}>
                 <img className="movie-item__poster" src={Poster} alt={Title} />
